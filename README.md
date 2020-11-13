@@ -84,9 +84,10 @@ void quickSort(T a[], int f, int l) {
 template<class T>
 void merge(T arr[], int l, int m, int r)
 {
-    int a = m - l + 1; //create size for second half
-    int b = r - m; //create size for first half 
-
+    int a = m - l + 1; 
+    int b = r - m; 
+    //create size a for second half
+    //create size b for first half 
     // temp arrays  
     T* L = new T[a];
     T* R = new T[b];
@@ -148,8 +149,7 @@ void mergeSort(T arr[], int l, int r)
 {
     if (l < r)
     {
-        // Same as (l+r)/2, but avoids  
-        // overflow for large l and h 
+       
         int m = l + (r - l) / 2;
 
         //sort first and second half  
@@ -171,9 +171,7 @@ int* intgenerator(int arr[], int size)  //takes in array already created and siz
 
 int main() {
 
-    int* arr1; //make int arr pointer for dynamic allocation 
-    double* arr; // make double arr ptr for dynamic allocation
-    int last = 1; // to use 250k instead of 1M 
+    int* arr1; //make int arr pointer for dynamic allocation
     int j; //counter
 
     for (j = 1; j < 6; j++) { // for each iteration of increase power of 10 
@@ -190,23 +188,23 @@ int main() {
 
             switch (i) { //print out each algorithim
             case 1:
-                selectSort(arr1, (10 * pow(10, j)) / last);                 //divide by last input size of 250k
+                selectSort(arr1, (10 * pow(10, j)));                 //divide by last input size of 250k
                 cout << "selectSort: ";
                 break;
             case 2:
-                bubbleSort(arr1, (10 * pow(10, j)) / last);
+                bubbleSort(arr1, (10 * pow(10, j)));
                 cout << "bubbleSort: ";
                 break;
             case 3:
-                insertSort(arr1, (10 * pow(10, j)) / last);
+                insertSort(arr1, (10 * pow(10, j)) );
                 cout << "insertSort: ";
                 break;
             case 4:
-                quickSort(arr1, 0, (10 * pow(10, j)) / last);
+                quickSort(arr1, 0, (10 * pow(10, j)) );
                 cout << "quickSort: ";
                 break;
             case 5:
-                mergeSort(arr1, 0, (10 * pow(10, j)) / last);
+                mergeSort(arr1, 0, (10 * pow(10, j)));
                 cout << "mergeSort: ";
                 break;
 
